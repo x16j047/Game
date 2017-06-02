@@ -48,6 +48,46 @@ namespace Game
             movey = 0;
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                movey -= speed;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                movey += speed;
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                movex -= speed;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                movex += speed;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                movex = 0;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                movex = 0;
+            }
+            else if (e.KeyCode == Keys.Left)
+            {
+                movey = 0;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                movey = 0;
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             pictureBox1.Left += movex;
